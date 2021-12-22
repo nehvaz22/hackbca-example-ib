@@ -12,7 +12,7 @@ module.exports =  [
     {
         "project_id": 2,
         "project_name": "Guitar",
-        "project_location": "Auditorium",
+        "project_location": "Gym",
         "project_language": "JavaScript",
         "project_date_proposed": "2021-04-02",
         "project_duration": 30,
@@ -22,7 +22,7 @@ module.exports =  [
     {
         "project_id": 3,
         "project_name": "Symphony Orchestra",
-        "project_location": "Auditorium",
+        "project_location": "Lower Cafeteria",
         "project_language": "Handlebars",
         "project_date_proposed": "2021-05-02",
         "project_duration": 45,
@@ -42,7 +42,7 @@ module.exports =  [
     {
         "project_id": 5,
         "project_name": "Amusement Park",
-        "project_location": "Auditorium",
+        "project_location": "Gym",
         "project_language": "HTML",
         "project_date_proposed": "2021-07-02",
         "project_duration": 60,
@@ -52,7 +52,7 @@ module.exports =  [
     {
         "project_id": 6,
         "project_name": "Dogs and Cats",
-        "project_location": "Auditorium",
+        "project_location": "Lower Cafeteria",
         "project_language": "Java",
         "project_date_proposed": "2021-08-02",
         "project_duration": 90,
@@ -72,7 +72,7 @@ module.exports =  [
     {
         "project_id": 8,
         "project_name": "Gaming World",
-        "project_location": "Auditorium",
+        "project_location": "Gym",
         "project_language": "Python",
         "project_date_proposed": "2021-10-02",
         "project_duration": 25,
@@ -82,7 +82,7 @@ module.exports =  [
     {
         "project_id": 9,
         "project_name": "Rollercoaster Simulation",
-        "project_location": "Auditorium",
+        "project_location": "Lower Cafeteria",
         "project_language": "HTML",
         "project_date_proposed": "2021-11-02",
         "project_duration": 30,
@@ -102,7 +102,7 @@ module.exports =  [
     {
         "project_id": 11,
         "project_name": "Interior Decorating",
-        "project_location": "Auditorium",
+        "project_location": "Gym",
         "project_language": "CSS",
         "project_date_proposed": "2021-05-08",
         "project_duration": 50,
@@ -112,7 +112,7 @@ module.exports =  [
     {
         "project_id": 12,
         "project_name": "Baking Star",
-        "project_location": "Auditorium",
+        "project_location": "Lower Cafeteria",
         "project_language": "HTML",
         "project_date_proposed": "2021-05-16",
         "project_duration": 60,
@@ -132,7 +132,7 @@ module.exports =  [
     {
         "project_id": 14,
         "project_name": "The Minions",
-        "project_location": "Auditorium",
+        "project_location": "Gym",
         "project_language": "JavaScript",
         "project_date_proposed": "2021-05-29",
         "project_duration": 90,
@@ -142,13 +142,13 @@ module.exports =  [
     {
         "project_id": 15,
         "project_name": "Favorite Disney Characters",
-        "project_location": "Auditorium",
+        "project_location": "Lower Cafeteria",
         "project_language": "CSS",
         "project_date_proposed": "2021-07-29",
         "project_duration": 120,
         "project_interest": 29,
         "project_description": "Don't miss out on this awesome project featuring some never before seen code!"
-    }
+    },
     {
         "project_id": 16,
         "project_name": "Christmas Decorating",
@@ -158,11 +158,11 @@ module.exports =  [
         "project_duration": 25,
         "project_interest": 31,
         "project_description": "Get excited for an unforgettable presentation!"
-    }
+    },
     {
         "project_id": 17,
         "project_name": "Christmas Radio",
-        "project_location": "Auditorium",
+        "project_location": "Gym",
         "project_language": "Javascript",
         "project_date_proposed": "2021-02-17",
         "project_duration": 20,
@@ -172,7 +172,7 @@ module.exports =  [
     {
         "project_id": 18,
         "project_name": "Piggy Bank 2.0",
-        "project_location": "Auditorium",
+        "project_location": "Lower Cafeteria",
         "project_language": "Javascript",
         "project_date_proposed": "2021-10-09",
         "project_duration": 30,
