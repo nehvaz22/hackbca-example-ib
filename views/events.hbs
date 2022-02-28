@@ -2,10 +2,10 @@
 
     <div class="container">
 
-      <h1>Event Schedule</h1>
+      <h1>Class Records</h1>
 
       <blockquote>
-        Click on the event name for more details!
+        Click on the class name for more details!
         Click on <i class="material-icons tiny">sort</i> to sort by that column, or items in <i
           class="material-icons tiny">filter_list</i> columns to filter by that item.
       </blockquote>
@@ -28,22 +28,12 @@
               <a href="?sort=starred"><i class="material-icons">sort</i></a>
             </th> 
 
-            <th>Event</th>
-            <th>Location <a href="?sort=location">
-                <i class="material-icons">sort</i></a>
-              <i class="material-icons">filter_list</i>
-            </th>
+            <th>Name</th>
             <th>Date / Time
               <a href="?sort=datetime"><i class="material-icons">sort</i></a>
             </th>
             <th>Duration</th>
-            <th>Type
-              <a href="?sort=type"><i class="material-icons">sort</i></a>
-              <i class="material-icons">filter_list</i>
-            </th>
-            <th>Interest<i class="material-icons">sort</i></th>
-            <!-- ADMIN ONLY BUTTONS -->
-          <th>Admin Op</th>
+            <th>Edit/Delete Info</th>
           </tr>
 
 
@@ -66,8 +56,6 @@
             <td> <a href='?filter=location:{{event_location}}'>{{event_location}} </a></td>
             <td><a href='?filter=date:05-02-2021'>{{event_date}}</a> {{event_time}}</td>
             <td>{{event_duration}}</td>
-            <td> <a href='?filter=type:Main'>{{event_type}}</a></td>
-            <td>{{event_interest}}<i class=material-icons>people</i></td>
             <!-- ADMIN ONLY BUTTONS -->
             <td nowrap>
 

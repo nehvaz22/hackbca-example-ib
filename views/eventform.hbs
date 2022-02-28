@@ -9,46 +9,18 @@
           <div class="card-content">
 
             <span class="card-title">
-              <h1>{{title}}</h1>
+              <h1> Create New Class </h1>
             </span>
 
 
             <div class="row">
               <div class="input-field col s12">
                 <input type="text" id="event_name" class="validate" data-length="32" required>
-                <label for="event_name">Event Name</label>
+                <label for="event_name">Class Name</label>
               </div>
             </div>
 
             <!-- https://materializecss.com/select.html -->
-            <div class="row">
-              <div class="input-field col s6">
-                <select id="event_type" name="event_type" required>
-                  <option value="" disabled selected>Select a type</option>
-                  <option value="Main">Main</option>
-                  <option value="Workshop">Workshop</option>
-                  <option value="Food">Food</option>
-                  <option value="Talk">Talk</option>
-                  <option value="Activity">Activity</option>
-                </select>
-                <label for="event_type">Event Type</label>
-              </div>
-
-              <div class="input-field col s6">
-                <select id="event_location" name="event_location" required>
-                  <option value="" disabled selected>Select a location</option>
-                  <option value="Gym">Gym</option>
-                  <option value="Auditorium">Auditorium</option>
-                  <option value="Lower Cafe">Lower Cafe</option>
-                  <option value="Commons">Commons</option>
-                  <option value="Room 136">Room 136</option>
-                  <option value="Room 138A">Room 138A</option>
-                  <option value="Room 138B">Roomb 138B</option>
-                </select>
-                <label for="event_location">Location</label>
-              </div>
-            </div>
-
             <div class="row">
               <div class="input-field col s4">
                 <input type="text" id=event_date name="event_date" class="datepicker no-autoinit" required>
@@ -65,13 +37,6 @@
                 <input type="number" id="event_duration" name="event_duration" min=0 step=15>
                 <label for="event_duration">Duration (minutes)</label>
 
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="input-field col s12">
-                <textarea id="event_description" class="materialize-textarea" data-length="500"></textarea>
-                <label for="event_description">Description</label>
               </div>
             </div>
 
