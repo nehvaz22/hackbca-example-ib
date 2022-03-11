@@ -33,11 +33,11 @@
                   <div class="card-image">
                       <!-- Added div wrapper to create dark gradient -->
                       <div class="card-image-gradient"> 
-                          <img src="/images/assembly.jpg">
+                          <img src="/images/clipart.jpeg">
                       </div>
-                      <span class="card-title"><h1>{{event.event_name}}</h1></span>
+                      <span class="card-title"><h1>{{oneclass.name}}</h1></span>
                     <!-- USER ONLY - Initialize page with appropriate state of button -->
-                    <a onclick='toggleInterest(this, "{{event.event_id }}")' class="btn-floating btn-large halfway-fab waves-effect waves-light scale-transition scale-in blue"><i class="material-icons">star_border</i></a>
+                    <a onclick='toggleInterest(this, "{{oneclass.id }}")' class="btn-floating btn-large halfway-fab waves-effect waves-light scale-transition scale-in blue"><i class="material-icons">star_border</i></a>
                     <!-- <a onclick='toggleInterest(this, "{{ event_id }}"))'class="btn-floating btn-large halfway-fab waves-effect waves-light scale-transition scale-in yellow"><iclass="material-icons">star</i></a> -->
                       
                   </div>
@@ -49,28 +49,25 @@
                               <th>Name</th>
                               <th>Date / Time </th>
                               <th>Duration</th>
-                              <th>Participants</th>
                               <!-- ADMIN ONLY BUTTONS -->
-                              <th>Admin Op</th>
+                              {{!-- <th>Admin Op</th> --}}
                               
                               </tr>
                           </thead>
                           <tbody>
                               <tr>
-
-                              <td>{{event.event_location}}</td>
-                              <td>{{event.event_date}} {{event.event_time}}</td>
-                              <td>{{event.event_duration}}</td>
-                              <td>{{event.event_type}}</td>
+                              <td>{{oneclass.name}}
+                              <td>{{oneclass.date}} {{oneclass.time}}</td>
+                              <td>{{oneclass.duration}}</td>
                               <!-- ADMIN ONLY BUTTONS -->
 
-                              <td nowrap>
+                              {{!-- <td nowrap>
                                 
                                   <!-- Alternatively to going to a new page, trigger a modal ??-->
-                                  <a class="btn-floating waves-effect waves-light green lighten-1" href="/events/modify/{{event.event_id}}"><i class="material-icons">edit</i></a>
-                                  <a class="btn-floating waves-effect waves-light red" onclick='confirmDelete("{{event.event_name}}","{{ event.event_id}}", "/events.html")'><i class="material-icons">delete</i></a>
+                                  <a class="btn-floating waves-effect waves-light green lighten-1" href="/events/modify/{{oneclass.id}}"><i class="material-icons">edit</i></a>
+                                  <a class="btn-floating waves-effect waves-light red" onclick='confirmDelete("{{oneclass.name}}","{{ oneclass.id}}", "/events.html")'><i class="material-icons">delete</i></a>
       
-                              </td>
+                              </td> --}}
 
                           </tbody>
                       </table>
@@ -81,7 +78,72 @@
                       <!-- https://vembarrajan.medium.com/html-css-tricks-scroll-able-table-body-tbody-d23182ae0fbc -->
                   </div>
                 </div>
-              <div class="container">
+    <div class="container">
+      <div class="card">
+      <h1>Participants</h1>
+
+      <blockquote>
+        Click on <i class="material-icons tiny">sort</i> to sort by that column, or items in <i
+          class="material-icons tiny">filter_list</i> columns to filter by that item.
+      </blockquote>
+      <div class="row">
+        <div class="col l3 s12 "> <i class="left material-icons">sort</i>Sorted by: Last Name</div>
+        <div class="col l3 offset-l6 ">
+          <!-- Position differently (left) for mobile -->
+          <div class="right hide-on-small-only"><i class="left material-icons">filter_list</i>Filter: None</div>
+          <div class="left hide-on-med-and-up"><i class="left material-icons">filter_list</i>Filter: None</div>
+        </div>
+
+      </div>
+
+      <!-- https://materializecss.com/table.html -->
+      <table class="highlight centered responsive-table">
+        <thead>
+          <tr>
+            <!-- USER ONLY-->
+            <th><i class="material-icons">star</i>
+              <a href="?sort=starred"><i class="material-icons">sort</i></a>
+            </th> 
+
+            <th> <a href = "/classes/">{{classname}}</a>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Home Address</th>
+            {{!-- <th>Admin Op</th> --}}
+          </tr>
+        </thead>
+
+        <tbody>
+          {{#each clients}}
+          <tr>
+            <!-- USER ONLY - Initialize page with appropriate state of button -->
+            <td>
+              <a onclick='toggleInterest(this, "{{ client_id }}")'
+                class="btn-floating btn-small waves-effect waves-light scale-transition scale-in blue"><i
+                  class="material-icons">star_border</i></a>
+              <!-- If user already "starred" this event, it should be a yellow star -->
+              <!-- <a onclick='toggleInterest(this, "{{ event_id }}"))'class="btn-floating btn-small waves-effect waves-light scale-transition scale-in yellow"><iclass="material-icons">star</i></a> -->
+            </td>
+            <td>{{first_name}}</a></td>
+            <td> {{last_name}}</td>
+            <td> {{email}}</a></td>
+            <td> {{phone_number}}</a></td>
+            <td> {{home_address}}</a></td>
+            <!-- ADMIN ONLY BUTTONS -->
+            {{!-- <td nowrap>
+              <a class="btn-floating btn-small waves-effect waves-light green lighten-1" href="/classes/modify/{{client_id}}"><i
+                  class="material-icons">edit</i></a>
+              <a class="btn-floating waves-effect waves-light red"
+                onclick='confirmDelete("{{class_name}}","{{ class_id}}")'><i class="material-icons">delete</i></a>
+            </td> --}}
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+
+        <div class="container">
         <div class="card grey lighten-4">
           <div class="card-content">
 

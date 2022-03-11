@@ -3,16 +3,16 @@
 // setTimeout: https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
 
 
-function confirmDelete(event_name, event_id, redirect_to){
-    if(confirm(`Are you sure you want to delete the event ${event_name} (id ${event_id})? This is PERMANENT and cannot be undone.`)) {
+function confirmDelete(class_name, class_id, redirect_to){
+    if(confirm(`Are you sure you want to delete the class ${class_name} (id ${class_id})? This is PERMANENT and cannot be undone.`)) {
         //TODO: make delete request
-        alert(`Successfully deleted the event ${event_name} (id ${event_id}).`);
+        alert(`Successfully deleted the class ${class_name} (id ${class_id}).`);
         //What to do next is not widely agreed upon: refresh/redirect to (current) events page?
         window.location.href = redirect_to || window.location.href;
-    }
+
 }
 
-function toggleInterest(interestButton, event_id){
+function toggleInterest(interestButton, class_id){
     let interestButtonIcon = interestButton.children[0];
     switch(interestButtonIcon.textContent) {
     case "star_border": //currently off, toggle on.
@@ -44,4 +44,5 @@ function toggleInterest(interestButton, event_id){
     }
     //Until server response comes, show a "processing" symbol - which means clicking does nothing until response comes.
     interestButtonIcon.textContent = "star_half";
+}
 }
