@@ -9,7 +9,7 @@
           <div class="card-content">
 
             <span class="card-title">
-              <h1> Create New Class </h1>
+              <h1 style = "color: #0bc5e6"> Create New Class </h1>
             </span>
 
 
@@ -70,26 +70,4 @@
 
     //TODO Form Validation
 
-
-    {{#if event}}
-      {{#with event}}
-          document.addEventListener('DOMContentLoaded', function() {
-
-            {{!-- Use triple mustaches to NOT escape characters --}}
-
-            document.getElementById("event_name").value = "{{{event_name}}}";
-            document.getElementById("event_type").value = "{{{event_type}}}";
-            document.getElementById("event_location").value = "{{{event_location}}}";
-            document.getElementById("event_date").value = "{{{event_date}}}";
-            document.getElementById("event_time").value = "{{{event_time}}}";
-            document.getElementById("event_duration").value = "{{{event_duration}}}";
-            document.getElementById("event_description").value = "{{{event_description}}}";
-            
-            var elems = document.querySelectorAll('select');
-            var instances = M.FormSelect.init(elems, {});
-        });
-
-      {{/with}}
-
-    {{/if}}
   </script>

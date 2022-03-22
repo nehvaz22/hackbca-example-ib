@@ -78,7 +78,6 @@
                       <!-- https://vembarrajan.medium.com/html-css-tricks-scroll-able-table-body-tbody-d23182ae0fbc -->
                   </div>
                 </div>
-    <div class="container">
       <div class="card">
       <h1>Participants</h1>
 
@@ -125,11 +124,11 @@
               <!-- If user already "starred" this event, it should be a yellow star -->
               <!-- <a onclick='toggleInterest(this, "{{ event_id }}"))'class="btn-floating btn-small waves-effect waves-light scale-transition scale-in yellow"><iclass="material-icons">star</i></a> -->
             </td>
-            <td>{{first_name}}</a></td>
+            <td>{{first_name}}</td>
             <td> {{last_name}}</td>
-            <td> {{email}}</a></td>
-            <td> {{phone_number}}</a></td>
-            <td> {{home_address}}</a></td>
+            <td> {{email}}</td>
+            <td> {{phone_number}}</td>
+            <td> {{home_address}}</td>
             <!-- ADMIN ONLY BUTTONS -->
             {{!-- <td nowrap>
               <a class="btn-floating btn-small waves-effect waves-light green lighten-1" href="/classes/modify/{{client_id}}"><i
@@ -142,60 +141,55 @@
         </tbody>
       </table>
     </div>
-
-        <div class="container">
+    
+    <form method="post" action="/classes/{{oneclass.class_id}}">
         <div class="card grey lighten-4">
           <div class="card-content">
 
             <span class="card-title">
-              <h1> Create New Client </h1>
+              <h1 style = "color: #0bc5e6"> Create New Client </h1>
             </span>
 
 
             <div class="row">
               <div class="input-field col s6">
-                <input type="text" id="event_name" class="validate" data-length="16" required>
+                <input type="text" id="event_name" name="client_first_name" class="validate" data-length="16" required>
                 <label for="event_name">First Name</label>
               </div>
             <div class="input-field col s6">
-                <input type="text" id="event_name" class="validate" data-length="16" required>
+                <input type="text" id="event_name" name="client_last_name" class="validate" data-length="16" required>
                 <label for="event_name">Last Name</label>
               </div>
             </div>
 
             <!-- https://materializecss.com/select.html -->
             <div class="row">
-              <div class="input-field col s4">
+              <div class="input-field col s8">
+                <name="client_email"></name>
                 <input type="text">
                 <label>Email</label>
               </div>
 
-            <div class="row">
               <div class="input-field col s4">
                 <input type="text">
                 <label>Phone Number</label>
               </div>
-
-            <div class="row">
-              <div class="input-field col s10">
-                <input type="text">
-                <label>Home Address</label>
-              </div>
-
-            <div class="row">
-              <div class="input-field col s10">
-                <input type="text">
-                <label>Medical Issues</label>
-              </div>
             </div>
 
-            <div class="button_wrapper">
+            <div class="row">
+              <div class="input-field col s10">
+                <input type="text">
+                 <name="client_address"></name>
+                <label>Home Address</label>
+              </div>
+            </div>
+            
+            <div class="button_wrapper row">
               <button class="submit waves-effect waves-light btn" type="submit">Create</button>
             </div>
           </div>
         </div>
 
-      </div>
     </form>
 
           

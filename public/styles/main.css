@@ -1,5 +1,5 @@
 html {
-    background-color: #90caf9 ; /*blue lighten-3*/
+    background-color: #d7effd ; /*blue lighten-3*/
 }
 
 main {
@@ -14,7 +14,7 @@ body {
 
 /* Nav bar */
 nav {
-    background-color: #1e88e5;  /*blue darken-1*/
+    background-color: #0bc5e6;  /*blue darken-1*/
 }
 nav img {
     height: 3em;
@@ -31,6 +31,6 @@ nav .btn:hover, .sidenav .btn:hover{
 
 /* footer */
 .page-footer {
-    background-color: #1e88e5; 
+    background-color: #0bc5e6; 
 }
 

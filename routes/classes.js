@@ -7,7 +7,7 @@ let db = require("../db/db")
 let select_classsql = `SELECT
 class.class_id,
 class.name,
-class.date,
+DATE_FORMAT (class.date, "%m-%d-%Y %h:%i %p") as date,
 class.duration
 FROM
 class
@@ -23,7 +23,6 @@ router.get('/', async function(req, res, next) {
 router.get('/create', function(req, res, next) {
   res.render('classform', {title: 'Create New Class', style: "newclass"})
 })
-
 
 let select_oneclass = `SELECT
 class_id,
@@ -48,7 +47,6 @@ ORDER BY
 client.last_name`
 
 router.get('/:class_id', async function(req, res, next) {
-  req.params.class_id
   let array_with_oneclass = await db.queryPromise (select_oneclass, [req.params.class_id])
   let oneclass = array_with_oneclass[0]
   console.log(oneclass)
@@ -62,15 +60,22 @@ router.get('/:class_id', async function(req, res, next) {
 
 let classquery = `INSERT INTO class
 (name, date, duration)
-VALUES (?, STR_TO_DATE(?, "%m-%d-%Y"), ?);`
+VALUES (?, STR_TO_DATE(?, "%m-%d-%Y %h:%i %p"), ?);`
 
 router.post('/add', async function(req, res, next) {
-  await db.queryPromise (classquery, [req.body.event_name, req.body.event_date, req.body.event_duration])
+  await db.queryPromise (classquery, [req.body.event_name, `${req.body.event_date} ${req.body.event_time}`, req.body.event_duration])
   res.redirect("/classes")
 });
 module.exports = router;
 
+let clientquery = `INSERT INTO client
+(first_name, last_name, email, phone_number, home_address, class_id)
+VALUES (?, ?, ?, ?, ?, ?);`
 
+router.post('/:class_id', async function(req, res, next) {
+  await db.queryPromise (clientquery, [req.body.client_first_name,req.body.client_last_name, req.body.client_email, req.body.client_phone_number, req.body.client_address, req.params.class_id])
+  res.redirect("/classes/"+req.params.class_id)
+})
 // router.get('/modify/:class_id', function(req, res, next) {
 //   let event_id = req.params.event_id;
 //   // let event;
